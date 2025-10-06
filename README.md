@@ -34,3 +34,36 @@ cd ".\opim5512-$ASSIGN-$NETID"
 git switch -c "$ASSIGN/$NETID-work"
 git push -u origin HEAD
 ```
+
+# GitHub classroom
+Classroom assignment settings (A02)
+
+Group assignment, team size = 2
+
+Template repository: your A02 starter (with the files above)
+
+Private repos, deadline set
+
+Share the invite link with students
+
+Student instructions (short)
+
+Accept the Classroom invite → repo created for your team.
+
+One partner creates a branch and opens a PR; the other reviews/comments/commits.
+
+Ensure the pipeline runs and saves a PNG in A02-collab/figs/.
+
+Wait for ✅ Autograding and ✅ Collaboration Check, then request instructor review.
+
+Submit the PR URL (and latest commit hash) in HuskyCT.
+
+TA grading “speed run”
+
+Open PR → both checks green? ✅
+
+Files changed only under A02-collab/**? ✅
+
+Approve → merge → record score in HuskyCT.
+
+If red, PR shows exactly which check failed (missing PNG / no partner participation).
