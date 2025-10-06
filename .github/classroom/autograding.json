@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "Data file present",
+      "run": "bash -lc 'ls A02-collab/data/* >/dev/null 2>&1'",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Pipeline runs & saves figure",
+      "run": "bash -lc 'python A02-collab/src/pipeline.py && ls A02-collab/figs/*.png >/dev/null 2>&1'",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 4
+    },
+    {
+      "name": "README has a short note",
+      "run": "bash -lc 'grep -Ei \"result|figure|summary|method\" A02-collab/README.md'",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    }
+  ]
+}
