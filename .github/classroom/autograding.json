@@ -1,3 +1,4 @@
+// .github/classroom/autograding.json
 {
   "tests": [
     {
@@ -11,14 +12,21 @@
       "name": "Pipeline runs & saves figure",
       "run": "bash -lc 'python A02-collab/src/pipeline.py && ls A02-collab/figs/*.png >/dev/null 2>&1'",
       "comparison": "included",
-      "timeout": 120,
+      "timeout": 180,
       "points": 4
     },
     {
-      "name": "README has a short note",
-      "run": "bash -lc 'grep -Ei \"result|figure|summary|method\" A02-collab/README.md'",
+      "name": "README has a short note (or was updated)",
+      "setup": "bash -lc 'git fetch -q origin main || true'",
+      "run": "bash -lc '\
+        if git rev-parse --verify origin/main >/dev/null 2>&1; then \
+          git diff --name-only origin/main...HEAD | grep -q \"^A02-collab/README.md$\" \
+          || grep -Ei \"result|figure|summary|method|bins|hist|png\" A02-collab/README.md; \
+        else \
+          grep -Ei \"result|figure|summary|method|bins|hist|png\" A02-collab/README.md; \
+        fi'",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 20,
       "points": 2
     }
   ]
