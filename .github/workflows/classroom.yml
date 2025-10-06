@@ -1,0 +1,23 @@
+name: Autograding
+on:
+  pull_request:
+  push:
+jobs:
+  autograding:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # so we can diff with main if needed
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps (lightweight)
+        run: |
+          python -m pip install -U pip
+          # If your repo has requirements.txt, uncomment the next line and remove the pinned libs:
+          # pip install -r requirements.txt
+          pip install pandas matplotlib
+      - name: Run autograder
+        uses: education/autograding@v1
