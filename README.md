@@ -1,4 +1,4 @@
-# opim5512-a02-starter
+# opim5512-a02-starter - TEST
 This is the starter repo for students to clone to their own repository. 
 ## A02 Workflow (Pairs)
 
